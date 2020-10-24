@@ -11,8 +11,9 @@ body{
         outline: none;
         background-color: rgba(255, 255, 255, 0.068);
         border: none;
-        padding-left: 2rem;
+        font-size: 1.5rem;
         transition: all 0.5s;
+        text-align: center;
 
         &:hover{
             background-color: rgba(255, 255, 255, 0.479);
@@ -28,6 +29,11 @@ ul {
     padding: 5rem 5rem 4rem 5rem;
     width: 22rem;
     border-radius: 3rem;
+    visibility: hidden;
+    transition: all 0.5s;
+
+
+    
     
 
 
@@ -50,4 +56,7 @@ ul {
 h1{
     text-align: center;
     margin-top: 5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.521);
 }

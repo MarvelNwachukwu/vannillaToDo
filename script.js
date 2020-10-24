@@ -1,25 +1,35 @@
-const input = document.querySelector('input');
 const form = document.querySelector('form');
 const unorderedList = document.querySelector('ul');
 
 
 form.addEventListener('submit', e => {
     e.preventDefault();
+    unorderedList.style.visibility = 'visible';
     const createList = document.createElement('LI');
     const input = document.querySelector('input');
-    createList.innerHTML = input.value;
-    unorderedList.appendChild(createList);
+    
+
+    // Save User's input to local storage
+    let key = `input${localStorage.length}`;
+    let saveToStorage = localStorage.setItem(key, `${input.value}`)
+
+    // Write list from LocalStorage 
+    
+    createList.innerHTML = localStorage.getItem(key)
+    unorderedList.appendChild(createList)
+    
+
+ 
+    // Clear Input
     input.value = '';
 
 })
 
 
-localStorage.t0= 'What is local storage?'
-localStorage.t1 = 'Learn more about this Local Storage'
-localStorage.t2 = 'practice Local storage'
-localStorage.t3 =  'Use Local Storage in a project'
+// for(i = 0; i < localStorage.length;i++){
+//     let storeKey = `input${localStorage.length}`;
+//     createList.innerHTML = localStorage.getItem('input0');
+//     unorderedList.appendChild(createList);
+//     console.log(createList.innerHTML)
+// }
 
-for(i = 0; i < localStorage.length;i++){
-    let storeKey = localStorage.key(i);
-    console.log(localStorage.getItem(storeKey))
-}
