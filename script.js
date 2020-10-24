@@ -5,6 +5,15 @@ const clearAll = document.querySelector('#clearAll');
 // After Window Loads, display whatever was saved in the previous session
 
 window.onload = () => {
+    // hide clear button and Task display when There's nothing
+
+    if( localStorage.length < 1){
+        unorderedList.style.visibility = 'hidden';
+        clearAll.style.visibility = 'hidden';
+    }
+
+    // Iterates though local storage and try to retrieve "Last memory"
+
     for ( i = 0; i < localStorage.length; i++) {
         const createList = document.createElement('LI');
         let storedKeys = localStorage.key(i);
@@ -13,12 +22,6 @@ window.onload = () => {
         unorderedList.appendChild(createList)
     }
 
-    // hide clear button and Task display when There's nothing
-
-    if( localStorage.length < 1){
-        unorderedList.style.visibility = 'hidden';
-        clearAll.style.visibility = 'hidden';
-    }
 }
 
     // Add User Input to To-Do list
@@ -53,9 +56,9 @@ form.addEventListener('submit', e => {
 
 clearAll.addEventListener('click', e => {
     localStorage.clear();
-    unorderedList.style.visibility = 'hidden';
-    clearAll.style.visibility = 'hidden';
-    location.reload()
+    location.reload();
+
+    // When it reloads, Window.onload function runs and check if local storage is clear. If it is, it hides the clear button and task display
 })
 
 
