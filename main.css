@@ -57,6 +57,7 @@ ul li {
   border-radius: 10px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  font-family: 'Poppins', sans-serif;
 }
 
 ul li:hover {
